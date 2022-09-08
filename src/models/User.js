@@ -39,7 +39,7 @@ const userSchema = mongoose.Schema(
     city: { type: String, required: true },
     state: { type: String, required: true },
     country: { type: String, required: true },
-    zipCode: { type: String, validate: regexOnlyNumber, required: true },
+    zipCode: { type: String, minLength: 8 , maxLength: 8 ,validate: regexOnlyNumber, required: true },
   },
   {
     versionKey: false,

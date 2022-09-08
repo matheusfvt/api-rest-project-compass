@@ -72,7 +72,7 @@ class UserController {
 
     user.findByIdAndDelete(id, (err) => {
       if (!err) {
-        res.status(200).send();
+        res.status(204).send();
       } else {
         if (err.name == "CastError") {
           res.status(404).send({ message: `${err.message} // User with ID ${id} not found!` });
