@@ -6,7 +6,8 @@ import user from "../models/User.js";
 const router = express.Router();
 
 router
-  .get("/api/v1/users", paginatedResults(user), userController.listarUsers)
+  .get("/api/v1/users", userController.listarUsers)
+  .get("/api/v1/users/lista", paginatedResults(user), userController.listarUsersPagination)
   .get("/api/v1/users/busca", userController.listarUsersPorNome)
   .get("/api/v1/users/:id", userController.listarUserPorId)
   .post("/api/v1/users", userController.cadastrarUser)
